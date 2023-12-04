@@ -2,7 +2,7 @@ import whois
 import time
 
 
-def is_domain_available(domain):
+def is_domain_available(domain: str) -> bool:
     try:
         domain_info = whois.whois(domain)
         return False
@@ -10,7 +10,7 @@ def is_domain_available(domain):
         return True
 
 
-def check_domains_from_file(input_file_path: str, output_file_path: str):
+def check_domains_from_file(input_file_path: str, output_file_path: str) -> None:
     with open(input_file_path, 'r') as infile, open(output_file_path, 'w') as outfile:
         for line in infile:
             word = line.strip()
